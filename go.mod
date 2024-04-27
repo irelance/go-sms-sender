@@ -1,4 +1,4 @@
-module github.com/casdoor/go-sms-sender
+module github.com/irelance/go-sms-sender
 
 go 1.17
 
