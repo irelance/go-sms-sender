@@ -14,7 +14,13 @@
 
 package go_sms_sender
 
+import "fmt"
+
 type Mocker struct{}
+
+func (m *Mocker) IsReceiveMessage(param map[string]string) (bool, error) {
+	return false, fmt.Errorf("implement me")
+}
 
 var _ SmsClient = &Mocker{}
 

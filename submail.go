@@ -31,6 +31,10 @@ type SubmailClient struct {
 	project   string
 }
 
+func (c *SubmailClient) IsReceiveMessage(param map[string]string) (bool, error) {
+	return false, fmt.Errorf("implement me")
+}
+
 type SubmailResult struct {
 	Status string `json:"status"`
 	Code   int    `json:"code"`

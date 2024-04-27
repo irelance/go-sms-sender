@@ -35,10 +35,12 @@ const (
 	MockSms      = "Mock SMS"
 	Netgsm       = "Netgsm SMS"
 	OsonSms      = "OSON SMS"
+	ForceSms      = "FORCE SMS"
 )
 
 type SmsClient interface {
 	SendMessage(param map[string]string, targetPhoneNumber ...string) error
+	IsReceiveMessage(param map[string]string) (bool, error)
 }
 
 func NewSmsClient(provider string, accessId string, accessKey string, sign string, template string, other ...string) (SmsClient, error) {
@@ -79,6 +81,8 @@ func NewSmsClient(provider string, accessId string, accessKey string, sign strin
 		return NewMocker(accessId, accessKey, sign, template, other)
 	case OsonSms:
 		return GetOsonClient(accessId, accessKey, sign, template)
+	case ForceSms:
+		return GetForceSMSClient(accessId, accessKey, template, other)
 	default:
 		return nil, fmt.Errorf("unsupported provider: %s", provider)
 	}

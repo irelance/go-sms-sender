@@ -35,6 +35,10 @@ type OsonClient struct {
 	Message          string
 }
 
+func (c *OsonClient) IsReceiveMessage(param map[string]string) (bool, error) {
+	return false, fmt.Errorf("implement me")
+}
+
 type OsonResponse struct {
 	Status        string    // ok
 	Timestamp     time.Time // 2017-07-07 16:58:12

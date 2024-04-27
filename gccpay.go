@@ -33,6 +33,10 @@ type GCCPAYClient struct {
 	template   string
 }
 
+func (c *GCCPAYClient) IsReceiveMessage(param map[string]string) (bool, error) {
+	return false, fmt.Errorf("implement me")
+}
+
 type params struct {
 	Mobile         string            `json:"mobile"`
 	TemplateCode   string            `json:"template_code"`

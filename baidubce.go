@@ -28,6 +28,10 @@ type BaiduClient struct {
 	core     *sms.Client
 }
 
+func (c *BaiduClient) IsReceiveMessage(param map[string]string) (bool, error) {
+	return false, fmt.Errorf("implement me")
+}
+
 func GetBceClient(accessId, accessKey, sign, template string, endpoint []string) (*BaiduClient, error) {
 	if len(endpoint) == 0 {
 		return nil, fmt.Errorf("missing parameter: endpoint")

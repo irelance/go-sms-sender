@@ -29,6 +29,10 @@ type InfobipClient struct {
 	template string
 }
 
+func (c *InfobipClient) IsReceiveMessage(param map[string]string) (bool, error) {
+	return false, fmt.Errorf("implement me")
+}
+
 type InfobipConfigService struct {
 	baseUrl string
 	sender  string

@@ -29,6 +29,10 @@ type AmazonSNSClient struct {
 	template string
 }
 
+func (a *AmazonSNSClient) IsReceiveMessage(param map[string]string) (bool, error) {
+	return false, fmt.Errorf("implement me")
+}
+
 func GetAmazonSNSClient(accessKeyID string, secretAccessKey string, template string, region []string) (*AmazonSNSClient, error) {
 	if len(region) == 0 {
 		return nil, fmt.Errorf("missing parameter: region")

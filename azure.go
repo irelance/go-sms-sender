@@ -28,6 +28,10 @@ type ACSClient struct {
 	Sender      string
 }
 
+func (a *ACSClient) IsReceiveMessage(param map[string]string) (bool, error) {
+	return false, fmt.Errorf("implement me")
+}
+
 type reqBody struct {
 	From          string         `json:"from"`
 	Message       string         `json:"message"`

@@ -29,6 +29,10 @@ type VolcClient struct {
 	smsAccount string
 }
 
+func (c *VolcClient) IsReceiveMessage(param map[string]string) (bool, error) {
+	return false, fmt.Errorf("implement me")
+}
+
 func GetVolcClient(accessId, accessKey, sign, templateId string, smsAccount []string) (*VolcClient, error) {
 	if len(smsAccount) == 0 {
 		return nil, fmt.Errorf("missing parameter: smsAccount")

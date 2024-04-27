@@ -32,6 +32,10 @@ type HuyiClient struct {
 	template string
 }
 
+func (hc *HuyiClient) IsReceiveMessage(param map[string]string) (bool, error) {
+	return false, fmt.Errorf("implement me")
+}
+
 func GetHuyiClient(appId string, appKey string, template string) (*HuyiClient, error) {
 	return &HuyiClient{
 		appId:    appId,

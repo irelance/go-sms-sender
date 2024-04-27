@@ -28,6 +28,10 @@ type Msg91Client struct {
 	templateId string
 }
 
+func (m *Msg91Client) IsReceiveMessage(param map[string]string) (bool, error) {
+	return false, fmt.Errorf("implement me")
+}
+
 func GetMsg91Client(senderId string, authKey string, templateId string) (*Msg91Client, error) {
 	msg91Client := &Msg91Client{
 		authKey:    authKey,

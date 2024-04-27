@@ -32,6 +32,10 @@ type UcloudClient struct {
 	Template   string
 }
 
+func (c *UcloudClient) IsReceiveMessage(param map[string]string) (bool, error) {
+	return false, fmt.Errorf("implement me")
+}
+
 func GetUcloudClient(publicKey string, privateKey string, sign string, template string, projectId []string) (*UcloudClient, error) {
 	if len(projectId) == 0 {
 		return nil, fmt.Errorf("missing parameter: projectId")

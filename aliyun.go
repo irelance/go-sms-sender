@@ -28,6 +28,10 @@ type AliyunClient struct {
 	core     *dysmsapi.Client
 }
 
+func (c *AliyunClient) IsReceiveMessage(param map[string]string) (bool, error) {
+	return false, fmt.Errorf("implement me")
+}
+
 type AliyunResult struct {
 	RequestId string
 	Message   string

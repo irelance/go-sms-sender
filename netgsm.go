@@ -31,6 +31,10 @@ type NetgsmClient struct {
 	httpClient *http.Client
 }
 
+func (c *NetgsmClient) IsReceiveMessage(param map[string]string) (bool, error) {
+	return false, fmt.Errorf("implement me")
+}
+
 type NetgsmResponse struct {
 	Code  string `xml:"main>code"`
 	JobID string `xml:"main>jobID"`

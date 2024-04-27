@@ -30,6 +30,10 @@ type TencentClient struct {
 	template string
 }
 
+func (c *TencentClient) IsReceiveMessage(param map[string]string) (bool, error) {
+	return false, fmt.Errorf("implement me")
+}
+
 func GetTencentClient(accessId string, accessKey string, sign string, templateId string, appId []string) (*TencentClient, error) {
 	if len(appId) == 0 {
 		return nil, fmt.Errorf("missing parameter: appId")

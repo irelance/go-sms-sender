@@ -30,6 +30,10 @@ type SmsBaoClient struct {
 	goodsid  string
 }
 
+func (c *SmsBaoClient) IsReceiveMessage(param map[string]string) (bool, error) {
+	return false, fmt.Errorf("implement me")
+}
+
 func GetSmsbaoClient(username string, apikey string, sign string, template string, other []string) (*SmsBaoClient, error) {
 	var goodsid string
 	if len(other) == 0 {

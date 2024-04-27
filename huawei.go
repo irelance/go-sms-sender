@@ -43,6 +43,10 @@ type HuaweiClient struct {
 	sender     string
 }
 
+func (c *HuaweiClient) IsReceiveMessage(param map[string]string) (bool, error) {
+	return false, fmt.Errorf("implement me")
+}
+
 func GetHuaweiClient(accessId string, accessKey string, sign string, template string, other []string) (*HuaweiClient, error) {
 	if len(other) < 2 {
 		return nil, fmt.Errorf("missing parameter: apiAddress or sender")

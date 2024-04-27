@@ -26,6 +26,10 @@ type TwilioClient struct {
 	core     *twilio.RestClient
 }
 
+func (c *TwilioClient) IsReceiveMessage(param map[string]string) (bool, error) {
+	return false, fmt.Errorf("implement me")
+}
+
 func GetTwilioClient(accessId string, accessKey string, template string) (*TwilioClient, error) {
 	client := twilio.NewRestClientWithParams(twilio.ClientParams{
 		Username: accessId,
