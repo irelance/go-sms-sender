@@ -35,7 +35,7 @@ const (
 	MockSms      = "Mock SMS"
 	Netgsm       = "Netgsm SMS"
 	OsonSms      = "OSON SMS"
-	ForceSms      = "FORCE SMS"
+	ForceSms      = "Force SMS"
 )
 
 type SmsClient interface {
